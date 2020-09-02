@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DinnerDecider</string>
+    <string name="enter">Enter android  version</string>
+    <string name="code">Enter android  code  name</string>
 </resources>
