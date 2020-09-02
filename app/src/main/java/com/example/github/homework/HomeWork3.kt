@@ -10,6 +10,7 @@ import android.widget.TableLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_homework.*
 import kotlinx.android.synthetic.main.table_item.*
+import kotlinx.android.synthetic.main.table_item.view.*
 
 
 /**
@@ -17,18 +18,17 @@ import kotlinx.android.synthetic.main.table_item.*
  */
 class HomeWork3 : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homework)
 
     }
-//
-//    fun addTable(view : TableLayout){
-//        val layout: View = LayoutInflater.from(applicationContext)
-//            .inflate(R.layout.table_item, null) //布局打气筒获取单行对象
-//        tx_version.text = et_version.text.toString()
-//        tx_code.text = et_code.text.toString()
-//        view.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE)
-//        view.addView(layout)
-//    }
+
+    fun addTable(view : View) {
+        val layout: View = LayoutInflater.from(applicationContext)
+            .inflate(R.layout.table_item, null) //布局打气筒获取单行对象
+        layout.tx_version.text = et_version.text.toString()
+        layout.tx_code.text = et_code.text.toString()
+        tab_layout.addView(layout)
+    }
 }

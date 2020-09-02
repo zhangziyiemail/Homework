@@ -47,6 +47,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_food"/>
+    <Button
+        android:onClick="homework3_1"
+        android:text="homework3_1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/homework3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/but_addfood"/>
+    <Button
+        android:onClick="homework3_2"
+        android:text="homework3_2"
+        android:layout_marginTop="10dp"
+        android:id="@+id/homework_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homework3"/>
 
     <Button
         android:onClick="ChangeFood"

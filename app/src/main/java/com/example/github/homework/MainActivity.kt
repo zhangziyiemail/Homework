@@ -22,31 +22,29 @@ class MainActivity : AppCompatActivity() {
     var arr = mutableSetOf("Chinese","Hamburger","Pizza","American","Mexican")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_homework)
+        setContentView(R.layout.activity_main)
 
     }
-//
-//    fun ChangeFood(view : View){
-//        tv_title.text = arr.random()
-//        startActivity(Intent(this,HomeWork3::class.java))
-//
-//    }
-//
-//    fun AddFood(view: View){
-//        et_food.text?.let {
-//            arr.add(it.toString())
-//        }
-//    }
+
+    fun ChangeFood(view : View){
+        tv_title.text = arr.random()
 
 
-    fun addTable(view : View) {
-        val layout: View = LayoutInflater.from(applicationContext)
-            .inflate(R.layout.table_item, null) //布局打气筒获取单行对象
-        layout.tx_version.text = et_version.text.toString()
-        layout.tx_code.text = et_code.text.toString()
-        tab_layout.addView(layout)
     }
 
+    fun AddFood(view: View){
+        et_food.text?.let {
+            arr.add(it.toString())
+        }
+    }
+
+    fun homework3_1(view :View){
+        startActivity(Intent(this,HomeWork3::class.java))
+    }
+
+    fun homework3_2(view :View){
+        startActivity(Intent(this,LoginPage::class.java))
+    }
 }
 
 
