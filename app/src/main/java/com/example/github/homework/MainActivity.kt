@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TableLayout
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_homework.*
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.table_item.*
 import kotlinx.android.synthetic.main.table_item.view.*
@@ -22,28 +23,20 @@ class MainActivity : AppCompatActivity() {
     var arr = mutableSetOf("Chinese","Hamburger","Pizza","American","Mexican")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
     }
+    fun signIn(view : View){
 
-    fun ChangeFood(view : View){
-        tv_title.text = arr.random()
-
-
+        Toast.makeText(this,"username is  ${et_username.text.toString()} password is ${et_password.text.toString()}",Toast.LENGTH_SHORT)
     }
 
-    fun AddFood(view: View){
-        et_food.text?.let {
-            arr.add(it.toString())
-        }
+    fun forgot(view : View){
+        Toast.makeText(this,"forgot",Toast.LENGTH_SHORT)
     }
 
-    fun homework3_1(view :View){
-        startActivity(Intent(this,HomeWork3::class.java))
-    }
-
-    fun homework3_2(view :View){
-        startActivity(Intent(this,LoginPage::class.java))
+    fun CreatAccount(view : View){
+        Toast.makeText(this,"creatAccoutn",Toast.LENGTH_SHORT)
     }
 }
 
