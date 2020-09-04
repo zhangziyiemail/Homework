@@ -2,21 +2,10 @@ package com.example.github.homework
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.util.LogPrinter
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.TableLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_homework.*
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.table_item.*
-import kotlinx.android.synthetic.main.table_item.view.*
-
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +29,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun forgot(view : View){
+        val email = Intent(Intent.ACTION_SEND)
+        email.type = "message/rfc822"
+        email.putExtra(Intent.EXTRA_EMAIL, arrayOf("info@skillgun.com"))
+        email.putExtra(Intent.EXTRA_SUBJECT, "Hi, This is a test mail..")
+        email.putExtra(Intent.EXTRA_TEXT, "Did you get this mail? if so please reply back")
+        startActivity(Intent.createChooser(email, "Choose an Email Client"))
         Toast.makeText(this,"forgot",Toast.LENGTH_SHORT).show()
     }
 
