@@ -1,6 +1,9 @@
 package com.example.github.homework
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -9,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_productlist.*
 /**
  *   Created by zhangziyi on 9/3/20 12:46
  */
-class ProdoutListActivit : AppCompatActivity(){
+class ProdoutListActivit : AppCompatActivity(),ItemClick{
 
     var list= mutableListOf<Product>()
     var adapter = MyAdapter()
@@ -27,7 +30,16 @@ class ProdoutListActivit : AppCompatActivity(){
         rv_prolist.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         rv_prolist.adapter = adapter
         adapter.setList(list)
+        adapter.setOnClick(this)
     }
 
+    override fun onItemClick(product: Product) {
+        val intent = Intent(this, ProductDetailList::class.java);
+        intent.putExtra("product",product)
+       startActivity(intent)
+    }
+
+
 }
+
 

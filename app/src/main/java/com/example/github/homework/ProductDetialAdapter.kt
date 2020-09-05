@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 class ProductDetialAdapter() : RecyclerView.Adapter<ProductDetialAdapter.MyViewHoleder>(){
 
     private var list: MutableList<Product>? = null
-
+    private var itemClick:ItemClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHoleder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_productdetail, parent, false)
@@ -30,11 +30,20 @@ class ProductDetialAdapter() : RecyclerView.Adapter<ProductDetialAdapter.MyViewH
     override fun onBindViewHolder(holder: MyViewHoleder, position: Int) {
         holder?.title?.text = list!![position].name
         holder?.imageView.setImageResource(R.mipmap.dd_logo)
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            itemClick!!.onItemClick(list!![position])
+        })
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
     open fun setList( list : MutableList<Product>){
         this.list = list
         notifyDataSetChanged()
+    }
+    open fun setOnClick(itemClick : ItemClick){
+        this.itemClick = itemClick
     }
 
     class MyViewHoleder(itemview: View) :RecyclerView.ViewHolder(itemview){
